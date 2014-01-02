@@ -65,6 +65,23 @@ namespace artemis {
 		}
 
 	}
+	
+	void World::process() {
+		Bag<EntitySystem*>& systems = systemManager->getSystems();
+		for(int i=0; i < systems.getCount(); ++i)
+		{
+			systems.get(i)->process();
+		}
+		return;
+	}
+	
+	EntitySystem& World::addSystem(EntitySystem* stm) {
+		return systemManager->setSystem(stm);
+	}
+	
+	void World::initialize() {
+		systemManager->initializeAll();
+	}
 
 	Entity& World::createEntity() {
 		return entityManager->create();
