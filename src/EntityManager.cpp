@@ -30,10 +30,6 @@ namespace artemis {
 			if(components == nullptr) {
 				components = new Bag<Component*>();
 				componentsByType.set(type.getId(), components);
-			} else if(components->get(e.getId()) != NULL) {
-				// Entity already had this component, need to perform component removal first
-				removeComponent(e, type);
-				refresh(e);
 			}
 
 			components->set(e.getId(), c);
