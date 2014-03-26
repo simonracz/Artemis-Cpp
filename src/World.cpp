@@ -1,6 +1,7 @@
 #include "World.h"
 #include "Entity.h"
 #include "SystemManager.h"
+#include "EntitySystem.h"
 #include "EntityManager.h"
 #include "SystemBitManager.h"
 
